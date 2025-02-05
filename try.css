@@ -1,0 +1,215 @@
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: "Prata", sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background: linear-gradient(45deg, #D9DFC6, #EFF3EA, #FFFDF0);
+    animation: gradientAnimation 5s ease infinite;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 20%;
+    }
+    50% {
+        background-position: 70% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.logo-image {
+    width: 30px; /* Adjust the size to match your text */
+    height: 30px; /* Adjust the size to match your text */
+    margin-right: 10px;
+    border-radius: 50%; /* Optional: Makes the image circular */
+    object-fit: cover; /* Ensures the image fits well */
+}
+
+
+.fancy-text {
+    font-family: 'Prata';
+    font-weight: bold;
+    color: #3D5300;
+}
+
+/*-----------------------------------Mainpage*/
+.background {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(45deg, #FFF2C2, #FFFDF0, #EFF3EA);
+  animation: gradientAnimation 5s ease infinite;
+
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Row styling */
+.row {
+  position: absolute;
+  width: 200%; /* Wider than the screen to allow seamless looping */
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevent images from wrapping */
+  padding: 20px 0; /* Space between rows */
+}
+
+.row1 {
+  top: 5%;
+  animation: slide 60s linear infinite; /* Slower speed */
+}
+
+.row2 {
+  top: 30.33%;
+  animation: slide 40s linear infinite; /* Faster speed */
+}
+
+.row3 {
+  top: 60.66%;
+  animation: slide 60s linear infinite; /* Slower speed */
+}
+
+/* Keyframes for sliding animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move left to right */
+  }
+}
+
+/* Image styling */
+/* Image styling */
+.row img {
+  height: 120px; /* Adjust image height as needed */
+  width: auto;
+  margin-right: 40px; /* Space between images */
+  border: 5px solid white; /* White border around images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  position: relative; /* Required for the name pop-up */
+}
+
+/* Hover effect */
+.row img:hover {
+  transform: scale(1.5); /* Pop out effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+  z-index: 10; /* Bring the image to the front */
+}
+
+/* Image name pop-up */
+.row img::after {
+  content: attr(data-name); /* Display the image name */
+  position: absolute;
+  bottom: -30px; /* Position below the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  color: white; /* White text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+.row img:hover::after {
+  opacity: 1; /* Show the name on hover */
+}
+
+/* Transparent Box */
+/* Transparent Box */
+.overlay-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%; /* Adjust width as needed */
+  max-width: 600px; /* Maximum width */
+  padding: 30px; /* Increase or decrease padding */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center-align text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for depth */
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for overlay box */
+.overlay-box:hover {
+  background: rgba(255, 255, 255, 0.7); /* Less transparent on hover */
+}
+
+/* Hover effect for text inside overlay box */
+.overlay-box:hover h1,
+.overlay-box:hover p {
+  color: #3D5300; /* Change text color on hover (e.g., blue) */
+}
+
+.overlay-box h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem; /* Large heading */
+  color: #333; /* Dark text color */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.overlay-box p {
+  margin: 0;
+  font-size: 1.2rem; /* Paragraph text size */
+  color: #555; /* Slightly lighter text color */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Fixed Box with Paragraph */
+.fixed-box {
+  position: relative;
+
+  top: 77%;
+
+  margin: 20px,auto;
+
+  padding: 20px;
+  background: linear-gradient(45deg, #FFF2C2, #FFFDF0, #EFF3EA);
+
+  text-align: center; /* Center-align text */
+
+}
+
+.fixed-box p {
+  margin: 0;
+  font-size: 1.2rem; /* Paragraph text size */
+  color: #3D5300; /* Dark text color */
+}
